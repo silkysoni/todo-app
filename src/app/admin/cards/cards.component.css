@@ -1,0 +1,78 @@
+body{
+    height: auto;
+    background-color: #37757f;
+}
+.show{
+    margin: auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+}
+.left{
+    display: flex;
+    align-items: center;
+}
+.check {
+    border-radius: 50%;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 0.3rem;
+    border:2px solid black
+}
+
+.check:hover {
+    cursor: pointer;
+}
+
+.right{
+    display: flex;
+}
+
+.btn {
+    margin: 0 0.5rem ;
+    border: none;
+    background: transparent;
+    color: #37757f;
+}
+
+.btn:hover {
+    text-shadow: 2px 2px 4px rgb(183, 180, 180);
+    color: 3px solid rgb(242, 119, 139)
+}
+
+.active-item {
+    background-color: #37757f
+}
+
+.active-item2 {
+    text-decoration: line-through !important;
+    color: gray;
+}
+.span-edit-delete {
+    color: #2c3e50
+}
+.editing-input {
+    background-color: aliceblue;
+    border: 3px solid #4ca1af;
+    margin: 0;
+    border-radius: 1.5rem;
+    height: fit-content;
+    font-size: 1.3rem;
+    font-family: cursive;
+    width: 100%;
+}
+.editing-input:focus{
+    border:3px solid #4ca1af;
+    outline: none;
+}
+.editSpan{
+    display: flex;
+}
+
+@media screen and (max-width: 480px) {
+    .show{
+        width: 80%;
+    }
+  }

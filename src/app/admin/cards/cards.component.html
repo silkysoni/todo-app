@@ -1,0 +1,28 @@
+<div *ngFor="let data of dataArr; let i = index" class="show">
+    <div class="left">
+        <button class="check" (click)="toggleButton(i)" [ngClass]="{'active-item': isButtonActive[i]}"></button>
+        <span *ngIf="!edit || editedIndex !== i" class="span-edit-delete">
+            <span class="second-div text-task" [ngClass]="{'active-item2': isButtonActive[i]}">{{data.task}}</span>
+        </span>
+        <span *ngIf="edit && editedIndex===i" class="editSpan">
+            <input type="text" [(ngModel)]="editing" [(ngModel)]="dataArr[i].task" name="task{{i}}"
+                *ngIf="edit && editedIndex===i" class="editing-input">
+            <button *ngIf="edit && editedIndex===i" (click)="onEdit(data._id,i)" class="btn"><i class='far fa-check-circle'
+                    style='font-size:20px'></i></button>
+        </span>
+    </div>
+
+    <div class="right">
+        <span *ngIf="!edit || editedIndex !== i" class="span-edit-delete">
+            <span class="edit-delete" *ngIf="!isButtonActive[i] && (!edit || editedIndex !== i)">
+                <button (click)="editMe(i)" class="btn editbtn"><i class='fas fa-pencil-alt'
+                        style='font-size:24px'></i></button>
+
+                <button (click)="onDelete(data._id,data.task)" class="btn dltbtn"
+                    *ngIf="!isButtonActive[i] && (!edit || editedIndex !== i)"><i class='far fa-trash-alt'
+                        style='font-size:24px'></i></button>
+            </span>
+        </span>
+        
+    </div>
+</div>
